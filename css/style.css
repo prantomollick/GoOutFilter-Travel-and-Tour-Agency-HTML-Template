@@ -1,0 +1,46 @@
+/*
+0 - 600 px:   Phone
+600 - 900px:  tablet Portrait
+900 - 1200px:  tablet landscape
+[1200-1800] is where our normal style apply
+1800px + : Big desktop
+*/
+/*
+$breakpoint argument choices:
+-phone
+-tab-port
+-tab-land
+-big-desktop
+1em 16px
+*/
+:root {
+  --color-primary: #3554D1;
+  --color-primary-dark-1: #163C8C;
+  --color-primary-dark-2: #13357B;
+  --color-primary-dark-3: #051036;
+  --color-grey-light-1: #DDDDDD;
+  --color-grey-light-2: #E5F0FD;
+  --color-grey-dark-1: #697488;
+  --color-white: #fff; }
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit; }
+
+html {
+  font-size: 62.5%;
+  box-sizing: border-box; }
+
+.container {
+  /* 1290px */
+  max-width: 129rem;
+  margin: 0 auto; }
+
+body {
+  font-family: 'Jost', sans-serif;
+  font-weight: 400;
+  line-height: 1.6;
+  font-size: 1.8rem; }
