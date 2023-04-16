@@ -8,12 +8,89 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Jost:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+    crossorigin="anonymous" />
   <title>GoOutFilter | Travel and Tour Agency</title>
   <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
+  <header class="header">
+    <div class="header-left">
+      <a href="#" class="header__logo">
+        <img src="img/main-logo.png" alt="Logo">
+      </a>
+      <nav class="main-nav">
+        <ul class="main-nav__list">
+          <li class="main-nav__item">
+            <a href="#" class="main-nav__link">Home<i class="fa-solid fa-caret-down"></i></a>
+          </li>
+          <li class="main-nav__item">
+            <a href="#" class="main-nav__link">Categories<i class="fa-solid fa-caret-down"></i></a>
+          </li>
+          <li class="main-nav__item">
+            <a href="#" class="main-nav__link">Destination<i class="fa-solid fa-caret-down"></i></a>
+          </li>
+          <li class="main-nav__item">
+            <a href="#" class="main-nav__link">Blog<i class="fa-solid fa-caret-down"></i></a>
+          </li>
+          <li class="main-nav__item">
+            <a href="#" class="main-nav__link">Pages<i class="fa-solid fa-caret-down"></i></a>
+          </li>
+          <li class="main-nav__item">
+            <a href="#" class="main-nav__link">Contact<i class="fa-solid fa-caret-down"></i></a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+    <div class="header-right">
+      <div class="locale">
+        <button type="button" class="local__currency">USD<i class="fa-solid fa-caret-down"></i></button>
+        <div>
+          <span class="divider"></span>
+        </div>
+        <button type="button" class="local__region"><img src="img/flag.png" class="local__flag-icon" alt="Flag">Unite
+          Kingdom<i class="fa-solid fa-caret-down"></i></button>
+      </div>
+      <div class="cta-btn-wrapper">
+        <a href="#" class="btn btn--light">Become An Expert</a>
+        <a href="#" class="btn btn--outline">Become An Expert</a>
+      </div>
+    </div>
+  </header>
+  <main class="main">
+    <section class="hero">
+      <img src="img/hero-bg.webp" alt="Hero Image">
+      <h1 class="heading-primary">Find Next Place To Visit</h1>
+      <p class="hero__text">Discover amzaing places at exclusive deals</p>
 
+      <nav class="hero-nav">
+        <ul class="hero-nav__list">
+          <li class="hero-nav__item"><a href="#" class="hero-nav__link" id="hotel">Hotel</a></li>
+          <li class="hero-nav__item"><a href="#" class="hero-nav__link" id="tour">Tour</a></li>
+          <li class="hero-nav__item"><a href="#" class="hero-nav__link" id="activity">Activity</a></li>
+          <li class="hero-nav__item"><a href="#" class="hero-nav__link" id="holidayRentals">Holiday Rentals</a></li>
+          <li class="hero-nav__item"><a href="#" class="hero-nav__link" id="car">Car</a></li>
+          <li class="hero-nav__item"><a href="#" class="hero-nav__link" id="cruise">Cruise</a></li>
+          <li class="hero-nav__item"><a href="#" class="hero-nav__link" id="flights">Flights</a></li>
+        </ul>
+      </nav>
+
+      <form action="#" class="search-form">
+        <div class="search-form__group">
+          <label for="location">Location</label>
+          <input type="text" id="location" placeholder="Where are you going?">
+        </div>
+        <div class="search-form__group">
+          <label for="check-inout">Location</label>
+          <input type="text" id="check-inout" placeholder="Where are you going?">
+        </div>
+      </form>
+
+    </section>
+  </main>
 </body>
 
 </html>
