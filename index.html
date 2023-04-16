@@ -62,33 +62,45 @@
   </header>
   <main class="main">
     <section class="hero">
-      <img src="img/hero-bg.webp" alt="Hero Image">
-      <h1 class="heading-primary">Find Next Place To Visit</h1>
-      <p class="hero__text">Discover amzaing places at exclusive deals</p>
+      <div class="hero-bg">
+        <img src="img/hero-bg.webp" alt="hero-img">
+      </div>
+      <div class="container hero__content">
+        <h1 class="heading-primary">Find Next Place To Visit</h1>
+        <p class="hero__text">Discover amzaing places at exclusive deals</p>
 
-      <nav class="hero-nav">
-        <ul class="hero-nav__list">
-          <li class="hero-nav__item"><a href="#" class="hero-nav__link" id="hotel">Hotel</a></li>
-          <li class="hero-nav__item"><a href="#" class="hero-nav__link" id="tour">Tour</a></li>
-          <li class="hero-nav__item"><a href="#" class="hero-nav__link" id="activity">Activity</a></li>
-          <li class="hero-nav__item"><a href="#" class="hero-nav__link" id="holidayRentals">Holiday Rentals</a></li>
-          <li class="hero-nav__item"><a href="#" class="hero-nav__link" id="car">Car</a></li>
-          <li class="hero-nav__item"><a href="#" class="hero-nav__link" id="cruise">Cruise</a></li>
-          <li class="hero-nav__item"><a href="#" class="hero-nav__link" id="flights">Flights</a></li>
-        </ul>
-      </nav>
+        <nav class="hero-nav">
+          <ul class="hero-nav__list">
+            <li class="hero-nav__item"><a href="#" class="hero-nav__link" id="hotel">Hotel</a></li>
+            <li class="hero-nav__item"><a href="#" class="hero-nav__link" id="tour">Tour</a></li>
+            <li class="hero-nav__item"><a href="#" class="hero-nav__link" id="activity">Activity</a></li>
+            <li class="hero-nav__item"><a href="#" class="hero-nav__link" id="holidayRentals">Holiday Rentals</a></li>
+            <li class="hero-nav__item"><a href="#" class="hero-nav__link" id="car">Car</a></li>
+            <li class="hero-nav__item"><a href="#" class="hero-nav__link" id="cruise">Cruise</a></li>
+            <li class="hero-nav__item"><a href="#" class="hero-nav__link" id="flights">Flights</a></li>
+          </ul>
+        </nav>
 
-      <form action="#" class="search-form">
-        <div class="search-form__group">
-          <label for="location">Location</label>
-          <input type="text" id="location" placeholder="Where are you going?">
-        </div>
-        <div class="search-form__group">
-          <label for="check-inout">Location</label>
-          <input type="text" id="check-inout" placeholder="Where are you going?">
-        </div>
-      </form>
-
+        <form action="#" class="search-form">
+          <div class="search-form__group search-form__group--1">
+            <label for="location" class="search-form__label">Location</label>
+            <input type="text" id="location" placeholder="Where are you going?" class="search-form__input">
+          </div>
+          <div class="search-form__group search-form__group--2">
+            <label for="check-inout" class="search-form__label">Check in - Check out</label>
+            <input type="date" id="check-inout" placeholder="Wed 2 Mar  -  Fri 11 Apr" class="search-form__input">
+          </div>
+          <div class="search-form__group search-form__group--3">
+            <label for="guest" class="search-form__label">Guest</label>
+            <div id="guest" class="search-form__input">
+              <span class="search-form__input-val--1">2</span> adults - <span class="search-form__input-val--2">1</span>
+              children - <spna class="search-form__input-val--3">1</spna>
+              room
+            </div>
+          </div>
+          <button type="submit" class="btn btn--rounded"><i class="fa-solid fa-magnifying-glass"></i>Search</button>
+        </form>
+      </div>
     </section>
   </main>
 </body>
