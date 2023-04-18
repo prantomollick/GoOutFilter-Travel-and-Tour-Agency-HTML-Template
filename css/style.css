@@ -66,6 +66,12 @@ body {
   line-height: 1.45;
   text-align: center; }
 
+.heading-secondary {
+  font-size: 3rem;
+  font-weight: 600;
+  line-height: 1;
+  color: var(--color-primary-dark-4); }
+
 .divider {
   height: 2rem;
   width: 1px;
