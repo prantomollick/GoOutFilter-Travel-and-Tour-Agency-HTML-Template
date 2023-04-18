@@ -3,6 +3,8 @@
   position: relative;
   overflow: hidden;
   background-image: linear-gradient(180deg, rgba(5, 16, 54, 0.1) 63.5%, rgba(5, 16, 54, 0.5) 100%);
+  flex: 30rem 0 0;
+  -ms-flex: 30rem 0 0;
 
   &__wrapper {
     width: 30rem;
