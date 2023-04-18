@@ -1,4 +1,95 @@
 .destination-card {
-  width: 30rem;
+  display: inline-block;
+  position: relative;
+  overflow: hidden;
+  background-image: linear-gradient(180deg, rgba(5, 16, 54, 0.1) 63.5%, rgba(5, 16, 54, 0.5) 100%);
+
+  &__wrapper {
+    width: 30rem;
+    height: 40rem;
+    border-radius: 4px;
+  }
+
+  &__img {
+    width: 100%;
+    height: 100%;
+    filter: brightness(90%);
+  }
+
+  &__wrapper:hover::before {
+    content: '';
+    width: 100%;
+    height: 100%;
+    background-color: var(--color-primary-dark-4);
+    opacity: 0.4;
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-radius: 4px;
+    z-index: 2;
+  }
+
+  &__content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    padding: 3rem 2rem 2rem 2rem;
+
+    display: flex;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 10;
+
+    &--down {
+      transition: all 0.2s ease;
+      transform: translateY(8rem);
+    }
+  }
+
+  &__heading {
+    font-size: 2.6rem;
+    font-weight: 600;
+    line-height: 1;
+    margin-bottom: 2rem;
+    color: var(--color-white);
+    text-align: center;
+  }
+
+  &__text {
+    color: transparent;
+  }
+
+  &__img-wrapper:hover,
+  &:hover {
+    .destination-card__text {
+      color: var(--color-white);
+    }
+
+    .destination-card__content--down {
+      transform: translateY(0);
+    }
+  }
+
+  &__btn {
+    width: 26rem;
+    height: 6rem;
+    border: none;
+    border-radius: 4px;
+    line-height: 1;
+    font-size: 1.5rem;
+    font-weight: 500;
+    transition: all 0.2s ease;
+    background-color: var(--color-white);
+    color: var(--color-primary-dark-4);
+
+    &:hover {
+      background-color: var(--color-primary-dark-4);
+      color: var(--color-white);
+    }
+  }
 
 }

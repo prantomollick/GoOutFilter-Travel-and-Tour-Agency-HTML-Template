@@ -4,11 +4,8 @@
   line-height: 0.5;
   border: none;
   padding: 1.9rem 3.5rem;
-  border-radius: 6rem;
   cursor: pointer;
   transition: all 0.2s ease;
-
-
 
   i {
     margin-right: 1rem;
@@ -56,6 +53,7 @@
     color: var(--color-white);
     height: 6rem;
     width: 14.6rem;
+    border-radius: 6rem;
   }
 
   &--rounded:hover {
