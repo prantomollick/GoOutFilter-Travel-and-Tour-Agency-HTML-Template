@@ -35,6 +35,10 @@
   &__content {
     position: absolute;
     padding-bottom: 21.4rem;
+    transition: all 0.4s ease;
+    transform: translateY(-20rem);
+    opacity: 0;
+    animation: moveInTop 0.8s linear 0.4s forwards;
   }
 
 }
@@ -60,7 +64,6 @@
     position: relative;
     line-height: 1;
     transition: all 0.2s ease;
-
   }
 
   &__link::before {
@@ -84,5 +87,13 @@
 
   &__link:active {
     color: var(--color-primary-dark-1);
+  }
+}
+
+.hero-nav__link.hero-nav__active {
+  color: var(--color-primary);
+
+  &::before {
+    width: 110%;
   }
 }

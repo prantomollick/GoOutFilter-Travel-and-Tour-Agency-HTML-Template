@@ -31,7 +31,7 @@
             <a href="#" class="main-nav__link">Categories<i class="fa-solid fa-caret-down"></i></a>
           </li>
           <li class="main-nav__item">
-            <a href="#" class="main-nav__link">Destination<i class="fa-solid fa-caret-down"></i></a>
+            <a href="#" class="main-nav__link">Destination</a>
           </li>
           <li class="main-nav__item">
             <a href="#" class="main-nav__link">Blog<i class="fa-solid fa-caret-down"></i></a>
@@ -40,26 +40,25 @@
             <a href="#" class="main-nav__link">Pages<i class="fa-solid fa-caret-down"></i></a>
           </li>
           <li class="main-nav__item">
-            <a href="#" class="main-nav__link">Contact<i class="fa-solid fa-caret-down"></i></a>
+            <a href="#" class="main-nav__link">Contact</a>
           </li>
         </ul>
       </nav>
     </div>
     <div class="header-right">
-      <div class="locale">
-        <button type="button" class="local__currency">USD<i class="fa-solid fa-caret-down"></i></button>
-        <div>
-          <span class="divider"></span>
+      <div class="header__locale">
+        <button type="button" class="header__locale--currency">USD<i class="fa-solid fa-caret-down"></i></button>
+        <div class="divider">
         </div>
-        <button type="button" class="local__region"><img src="img/flag.png" class="local__flag-icon" alt="Flag">Unite
+        <button type="button" class="header__locale--region"><img src="img/flag.png" class="header__locale--region-icon"
+            alt="Flag">Unite
           Kingdom<i class="fa-solid fa-caret-down"></i></button>
       </div>
-      <div class="cta-btn-wrapper">
-        <a href="#" class="btn btn--light">Become An Expert</a>
-        <a href="#" class="btn btn--outline">Become An Expert</a>
-      </div>
+      <a href="#" class="btn__link btn__link--light">Become An Expert</a>
+      <a href="#" class="btn__link btn__link--outline">Sign In / Register</a>
     </div>
   </header>
+
   <main class="main">
     <section class="hero">
       <div class="hero-bg">
@@ -71,7 +70,7 @@
 
         <nav class="hero-nav">
           <ul class="hero-nav__list">
-            <li class="hero-nav__item"><a href="#" class="hero-nav__link" id="hotel">Hotel</a></li>
+            <li class="hero-nav__item"><a href="#" class="hero-nav__link hero-nav__active" id="hotel">Hotel</a></li>
             <li class="hero-nav__item"><a href="#" class="hero-nav__link" id="tour">Tour</a></li>
             <li class="hero-nav__item"><a href="#" class="hero-nav__link" id="activity">Activity</a></li>
             <li class="hero-nav__item"><a href="#" class="hero-nav__link" id="holidayRentals">Holiday Rentals</a></li>
@@ -81,14 +80,14 @@
           </ul>
         </nav>
 
-        <form action="#" class="search-form">
+        <form action="#" class="search-form" id="hotel-search">
           <div class="search-form__group search-form__group--1">
             <label for="location" class="search-form__label">Location</label>
             <input type="text" id="location" placeholder="Where are you going?" class="search-form__input">
           </div>
           <div class="search-form__group search-form__group--2">
             <label for="check-inout" class="search-form__label">Check in - Check out</label>
-            <input type="date" id="check-inout" placeholder="Wed 2 Mar  -  Fri 11 Apr" class="search-form__input">
+            <input type="text" id="check-inout" placeholder="Wed 2 Mar  -  Fri 11 Apr" class="search-form__input">
           </div>
           <div class="search-form__group search-form__group--3">
             <label for="guest" class="search-form__label">Guest</label>
@@ -103,6 +102,11 @@
       </div>
     </section>
   </main>
+
+
+
+
+
 </body>
 
 </html>

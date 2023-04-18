@@ -13,11 +13,22 @@ $breakpoint argument choices:
 -big-desktop
 1em 16px
 */
+@keyframes moveInTop {
+  0% {
+    opacity: 0;
+    transform: translateY(20rem); }
+  80% {
+    opacity: 0.6; }
+  100% {
+    opacity: 1;
+    transform: translateY(0); } }
+
 :root {
   --color-primary: #3554D1;
   --color-primary-dark-1: #163C8C;
   --color-primary-dark-2: #13357B;
-  --color-primary-dark-3: #051036;
+  --color-primary-dark-3: #0D2857;
+  --color-primary-dark-4: #051036;
   --color-grey-light-1: #E5F0FD;
   --color-grey-light-2: #DDDDDD;
   --color-grey-light-3: #DADFE6;
@@ -54,6 +65,13 @@ body {
   line-height: 1.45;
   text-align: center; }
 
+.divider {
+  height: 2rem;
+  width: 1px;
+  background-color: #fff;
+  opacity: 0.3;
+  margin: 0 2rem; }
+
 .btn {
   font-size: 1.5rem;
   font-weight: 500;
@@ -66,6 +84,28 @@ body {
   .btn i {
     margin-right: 1rem;
     line-height: 0; }
+  .btn__link, .btn__link:link, .btn__link:visited {
+    font-family: inherit;
+    font-size: 1.4rem;
+    line-height: 1;
+    font-weight: 400;
+    text-decoration: none;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 17rem;
+    height: 5rem;
+    transition: all 0.2s ease; }
+  .btn__link--light {
+    color: var(--color-primary-dark-4);
+    background-color: var(--color-white); }
+  .btn__link--outline {
+    color: var(--color-white);
+    border: 1px solid var(--color-white); }
+  .btn__link:hover, .btn__link:active {
+    color: var(--color-primary-dark-4);
+    background-color: var(--color-white); }
   .btn--rounded {
     background-color: var(--color-primary);
     color: var(--color-white);
@@ -78,10 +118,9 @@ body {
   display: flex;
   background-color: var(--color-white);
   padding: 1rem;
-  width: 90rem;
-  justify-content: space-between;
   align-items: center;
-  border-radius: 6rem; }
+  border-radius: 6rem;
+  gap: 2.431266666666667rem; }
   .search-form__group {
     display: flex;
     flex-direction: column;
@@ -120,7 +159,65 @@ body {
       font-size: 1.5rem; }
 
 .header {
-  display: none; }
+  display: flex;
+  padding: 2rem 3rem;
+  justify-content: space-between;
+  align-items: center; }
+  .header-left {
+    display: flex;
+    align-items: center;
+    gap: 3rem; }
+  .header__logo {
+    width: 18rem;
+    height: auto; }
+    .header__logo img {
+      width: 100%; }
+  .header-right {
+    display: flex;
+    gap: 2rem; }
+  .header__locale {
+    display: flex;
+    align-items: center; }
+    .header__locale--currency {
+      font-size: 1.4rem;
+      font-weight: 400;
+      background-color: transparent;
+      border: none;
+      color: var(--color-white); }
+      .header__locale--currency i {
+        padding-left: 1.2rem; }
+    .header__locale--region {
+      font-size: 1.4rem;
+      font-weight: 400;
+      background-color: transparent;
+      border: none;
+      color: var(--color-white);
+      display: flex;
+      align-items: center; }
+      .header__locale--region-icon {
+        margin-right: 0.7rem;
+        border-radius: 50px; }
+      .header__locale--region i {
+        padding-left: 1.2rem; }
+
+.main-nav__list {
+  display: flex;
+  list-style: none;
+  gap: 3.7rem; }
+
+.main-nav__link, .main-nav__link:link, .main-nav__link:visited {
+  text-decoration: none;
+  color: var(--color-white);
+  font-weight: 500;
+  font-size: 1.5rem;
+  line-height: 1;
+  display: flex;
+  align-items: center; }
+  .main-nav__link i, .main-nav__link:link i, .main-nav__link:visited i {
+    padding-left: 1.2rem; }
+
+.main-nav__link:hover {
+  color: var(--color-primary-dark-1); }
 
 .hero-bg {
   position: relative;
@@ -150,7 +247,11 @@ body {
 
 .hero__content {
   position: absolute;
-  padding-bottom: 21.4rem; }
+  padding-bottom: 21.4rem;
+  transition: all 0.4s ease;
+  transform: translateY(-20rem);
+  opacity: 0;
+  animation: moveInTop 1s linear 0.5s forwards; }
 
 .hero-nav {
   margin-bottom: 2rem; }
@@ -182,8 +283,14 @@ body {
   .hero-nav__link:active {
     color: var(--color-primary-dark-1); }
 
+.hero-nav__link.hero-nav__active {
+  color: var(--color-primary); }
+  .hero-nav__link.hero-nav__active::before {
+    width: 110%; }
+
 .header {
-  display: none; }
+  width: 100vw;
+  background-color: var(--color-primary-dark-4); }
 
 .hero {
   height: 94vh;

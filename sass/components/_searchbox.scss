@@ -2,10 +2,11 @@
   display: flex;
   background-color: var(--color-white);
   padding: 1rem;
-  width: 90rem;
-  justify-content: space-between;
+  // width: 90rem;
   align-items: center;
   border-radius: 6rem;
+  // justify-content: space-between;
+  gap: 2.431266666666667rem;
 
   &__group {
     display: flex;
