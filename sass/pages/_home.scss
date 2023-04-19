@@ -11,13 +11,10 @@
   align-items: flex-end;
 }
 
-.destinations {
+.destinations-section {
   padding: 12rem 0;
 
-  &__head {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-end;
-    margin-bottom: 4rem;
+  &__banner {
+    padding: 12rem 0 0 0;
   }
 }
