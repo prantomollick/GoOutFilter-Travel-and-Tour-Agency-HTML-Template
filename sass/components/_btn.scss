@@ -17,36 +17,65 @@
   &__link:visited {
     font-family: inherit;
     font-size: 1.4rem;
-    line-height: 1;
     font-weight: 400;
+    line-height: 1;
     text-decoration: none;
     border-radius: 4px;
+
     padding: 1.5rem 3rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    // display: flex;
+    // align-items: center;
+    // justify-content: center;
     // width: 17rem;
     // height: 5rem;
     transition: all 0.2s ease;
   }
 
   &__link--light {
+    display: inline-block;
     color: var(--color-primary-dark-4);
     background-color: var(--color-white);
   }
 
   &__link--outline {
+    display: inline-block;
     color: var(--color-white);
     border: 1px solid var(--color-white);
+
+    &:hover,
+    &:active {
+      color: var(--color-primary-dark-4);
+      background-color: var(--color-white);
+    }
   }
 
-  &__link:hover,
-  &__link:active {
-    color: var(--color-primary-dark-4);
-    background-color: var(--color-white);
+
+  &__secondary {
+    background: rgba(53, 84, 209, 0.05);
+    display: flex;
+    align-items: center;
+    font-size: 1.5rem !important;
+    font-weight: 500 !important;
+    color: var(--color-primary);
+
+    &--icon {
+      line-height: 1;
+      width: 2rem;
+      height: 2rem;
+      margin-left: 1.3rem;
+      stroke: var(--color-primary);
+    }
+
+
+    &:hover {
+      background-color: var(--color-primary);
+      color: var(--color-white);
+
+      .btn__secondary--icon {
+        stroke: var(--color-white);
+      }
+    }
   }
-
-
 
   &--rounded {
     background-color: var(--color-primary);
@@ -54,10 +83,11 @@
     height: 6rem;
     width: 14.6rem;
     border-radius: 6rem;
+
+    &:hover {
+      background-color: var(--color-primary-dark-1);
+    }
   }
 
-  &--rounded:hover {
-    background-color: var(--color-primary-dark-1);
-  }
 
 }

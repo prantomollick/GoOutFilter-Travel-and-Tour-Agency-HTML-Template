@@ -18,6 +18,12 @@ body {
 .heading-secondary {
   font-size: 3rem;
   font-weight: 600;
-  line-height: 1;
-  color: var(--color-primary-dark-4)
+  line-height: 1.5;
+  color: var(--color-primary-dark-4);
+
+  &__sub-text {
+    font-size: 1.6rem;
+    line-height: 1.6;
+    color: var(--color-grey-dark-1);
+  }
 }

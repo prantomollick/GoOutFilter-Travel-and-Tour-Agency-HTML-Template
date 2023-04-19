@@ -69,8 +69,12 @@ body {
 .heading-secondary {
   font-size: 3rem;
   font-weight: 600;
-  line-height: 1;
+  line-height: 1.5;
   color: var(--color-primary-dark-4); }
+  .heading-secondary__sub-text {
+    font-size: 1.6rem;
+    line-height: 1.6;
+    color: var(--color-grey-dark-1); }
 
 .divider {
   height: 2rem;
@@ -93,32 +97,49 @@ body {
   .btn__link, .btn__link:link, .btn__link:visited {
     font-family: inherit;
     font-size: 1.4rem;
-    line-height: 1;
     font-weight: 400;
+    line-height: 1;
     text-decoration: none;
     border-radius: 4px;
     padding: 1.5rem 3rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
     transition: all 0.2s ease; }
   .btn__link--light {
+    display: inline-block;
     color: var(--color-primary-dark-4);
     background-color: var(--color-white); }
   .btn__link--outline {
+    display: inline-block;
     color: var(--color-white);
     border: 1px solid var(--color-white); }
-  .btn__link:hover, .btn__link:active {
-    color: var(--color-primary-dark-4);
-    background-color: var(--color-white); }
+    .btn__link--outline:hover, .btn__link--outline:active {
+      color: var(--color-primary-dark-4);
+      background-color: var(--color-white); }
+  .btn__secondary {
+    background: rgba(53, 84, 209, 0.05);
+    display: flex;
+    align-items: center;
+    font-size: 1.5rem !important;
+    font-weight: 500 !important;
+    color: var(--color-primary); }
+    .btn__secondary--icon {
+      line-height: 1;
+      width: 2rem;
+      height: 2rem;
+      margin-left: 1.3rem;
+      stroke: var(--color-primary); }
+    .btn__secondary:hover {
+      background-color: var(--color-primary);
+      color: var(--color-white); }
+      .btn__secondary:hover .btn__secondary--icon {
+        stroke: var(--color-white); }
   .btn--rounded {
     background-color: var(--color-primary);
     color: var(--color-white);
     height: 6rem;
     width: 14.6rem;
     border-radius: 6rem; }
-  .btn--rounded:hover {
-    background-color: var(--color-primary-dark-1); }
+    .btn--rounded:hover {
+      background-color: var(--color-primary-dark-1); }
 
 .search-form {
   display: flex;
@@ -380,3 +401,8 @@ body {
 
 .destinations {
   padding: 12rem 0; }
+  .destinations__head {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 4rem; }
