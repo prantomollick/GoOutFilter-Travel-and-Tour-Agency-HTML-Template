@@ -1,11 +1,17 @@
 .header {
   // height: 9rem;
   width: 100vw;
-  background-color: var(--color-primary-dark-4);
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  background-color: transparent;
+  // background-color: var(--color-primary-dark-4);
 }
 
 .hero {
   height: 94vh;
+  margin-top: -9rem;
   display: flex;
   justify-content: center;
   align-items: flex-end;
