@@ -9,15 +9,19 @@
 @import "base/utilities";
 
 
+@import "components/reaction";
+@import "components/badge";
 @import "components/btn";
 @import "components/searchbox";
 @import "components/destination-card";
 @import "components/banner-card";
+@import "components/hotel-card";
 
 
 @import "layout/navigation";
 @import "layout/hero";
 @import "layout/destination";
+@import "layout/recommend";
 
 
 @import "pages/home";

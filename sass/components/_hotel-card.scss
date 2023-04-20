@@ -1,0 +1,71 @@
+.hotel {
+  max-width: 30rem;
+
+  &__header {
+    min-height: 30rem;
+    border-radius: 4px;
+    overflow: hidden;
+    position: relative;
+    z-index: 10;
+
+    &::before {
+      content: '';
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      background: linear-gradient(180deg, rgba(5, 16, 54, 0) 63.5%, rgba(5, 16, 54, 0.5) 100%);
+      z-index: 1;
+    }
+  }
+
+  &__slide {
+    display: flex;
+    transform: translateX(-30rem);
+
+  }
+
+  &__img-container {
+    flex: 30rem 0 0;
+    -ms-flex: 30rem 0 0;
+    max-width: 30rem;
+    height: 30rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+
+    img {
+      max-width: 100%;
+      min-height: 100%;
+      object-fit: cover;
+      object-position: center;
+      filter: brightness(95%);
+      transition: all 0.3s ease;
+    }
+
+  }
+
+  &__badge,
+  &__reaction,
+  &__slide-btn {
+    position: absolute;
+  }
+
+  &__badge {
+    top: 2rem;
+    left: 0;
+  }
+
+  &__reaction {
+    top: 2rem;
+    right: 2rem;
+  }
+
+
+  &__header:hover &__img-container>img {
+    transform: scale(1.2);
+  }
+
+}
