@@ -2,11 +2,10 @@
   max-width: 30rem;
 
   &__header {
+    position: relative;
     min-height: 30rem;
     border-radius: 4px;
     overflow: hidden;
-    position: relative;
-    z-index: 10;
 
     &::before {
       content: '';
@@ -16,14 +15,13 @@
       top: 0;
       left: 0;
       background: linear-gradient(180deg, rgba(5, 16, 54, 0) 63.5%, rgba(5, 16, 54, 0.5) 100%);
-      z-index: 1;
+      z-index: 2;
     }
   }
 
   &__slide {
     display: flex;
-    transform: translateX(-30rem);
-
+    transform: translateX(-60rem);
   }
 
   &__img-container {
@@ -63,9 +61,97 @@
     right: 2rem;
   }
 
+  &__slide-btn {
+    width: 3rem;
+    height: 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    border-radius: 10rem;
+    transform: translateY(-50%);
+    background-color: var(--color-white);
+    color: var(--color-primary-dark-4);
+    z-index: 3;
+    transition: all 0.2s ease;
+    opacity: 0;
+    -webkit-transition: all .3s cubic-bezier(0.78, 0.13, 0.15, 0.86);
+    transition: all .3s cubic-bezier(0.78, 0.13, 0.15, 0.86);
 
-  &__header:hover &__img-container>img {
+    i {
+      font-size: 1.2rem;
+      color: currentColor;
+    }
+
+    &--left {
+      top: 50%;
+      left: 2rem;
+    }
+
+    &--right {
+      top: 50%;
+      right: 2rem;
+    }
+
+    &:hover {
+      background-color: var(--color-primary);
+      color: var(--color-white);
+    }
+  }
+
+
+  &__slide-dots {
+    position: absolute;
+    bottom: 2rem;
+    left: 12rem;
+    display: flex;
+    gap: 0.7rem;
+    z-index: 4;
+
+  }
+
+  &__slide-dot {
+    display: inline-block;
+    width: 0.6rem;
+    height: 0.6rem;
+    border-radius: 10rem;
+    background-color: var(--color-white);
+    opacity: 70%;
+  }
+
+  &__slide-dot--active {
+    opacity: 100%;
+    transform: scale(1.1);
+  }
+
+
+  &__title {
+    margin: 1rem 0 0.5rem 0;
+
+    &--span {
+      line-height: 1.15;
+      font-size: 1.8rem;
+      color: var(--color-primary-dark-4);
+      transition: all 0.2s ease;
+      background-image: linear-gradient(transparent 24px, black 20px);
+      background-repeat: no-repeat;
+      background-size: 0%;
+      transition: background-size 0.3s cubic-bezier(0.785, 0.135, 0.15, 0.86) 0s;
+    }
+  }
+
+
+  &:hover &__img-container>img {
     transform: scale(1.2);
   }
+
+  &:hover &__title--span {
+    background-size: 100%;
+  }
+
+  &:hover &__slide-btn {
+    opacity: 100%;
+  }
+
 
 }
