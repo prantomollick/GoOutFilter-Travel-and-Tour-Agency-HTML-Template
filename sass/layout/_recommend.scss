@@ -1,4 +1,5 @@
 .recommend {
+  overflow-x: hidden;
 
   &__head {
     display: flex;
@@ -58,14 +59,23 @@
 
   }
 
-}
 
-.recommend__product {
-
-  &:link,
-  &:visited {
-    text-decoration: none;
-    display: inline-block;
+  &__product-slides {
+    display: flex;
+    gap: 3rem;
   }
+
+  &__product {
+    flex: 30rem 0 0;
+    -ms-flex: 30rem 0 0;
+    transform: translateX(-99rem);
+
+    &:link,
+    &:visited {
+      text-decoration: none;
+      display: inline-block;
+    }
+  }
+
 
 }

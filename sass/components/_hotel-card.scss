@@ -1,5 +1,6 @@
 .hotel {
   max-width: 30rem;
+  // min-height: 48rem;
 
   &__header {
     position: relative;
@@ -74,6 +75,7 @@
     color: var(--color-primary-dark-4);
     z-index: 3;
     transition: all 0.2s ease;
+    visibility: hidden;
     opacity: 0;
     -webkit-transition: all .3s cubic-bezier(0.78, 0.13, 0.15, 0.86);
     transition: all .3s cubic-bezier(0.78, 0.13, 0.15, 0.86);
@@ -103,11 +105,12 @@
   &__slide-dots {
     position: absolute;
     bottom: 2rem;
-    left: 12rem;
+    left: 0;
+    width: 100%;
     display: flex;
+    justify-content: center;
     gap: 0.7rem;
     z-index: 4;
-
   }
 
   &__slide-dot {
@@ -116,7 +119,8 @@
     height: 0.6rem;
     border-radius: 10rem;
     background-color: var(--color-white);
-    opacity: 70%;
+    opacity: 0;
+    transition: all .3s cubic-bezier(0.78, 0.13, 0.15, 0.86);
   }
 
   &__slide-dot--active {
@@ -124,13 +128,12 @@
     transform: scale(1.1);
   }
 
-
   &__title {
     margin: 1rem 0 0.5rem 0;
 
     &--span {
-      line-height: 1.15;
       font-size: 1.8rem;
+      line-height: 3rem;
       color: var(--color-primary-dark-4);
       transition: all 0.2s ease;
       background-image: linear-gradient(transparent 24px, black 20px);
@@ -140,6 +143,63 @@
     }
   }
 
+  &__addr {
+    font-size: 1.4rem;
+    color: var(--color-grey-dark-1);
+    font-weight: 400;
+
+  }
+
+
+  &__footer {
+    margin-top: 2rem;
+  }
+
+  &__rating {
+    display: flex;
+    align-items: center;
+
+
+    &--value {
+      font-size: 1.2rem;
+      font-weight: 600;
+      width: 3rem;
+      height: 3rem;
+      border-radius: 4px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: var(--color-primary);
+      color: var(--color-white);
+    }
+
+    &--comment {
+      font-size: 1.4rem;
+      font-weight: 500;
+      color: var(--color-primary-dark-4);
+      padding-left: 0.9rem;
+    }
+
+    &--reviews {
+      font-size: 1.4rem;
+      font-weight: 400;
+      color: var(--color-grey-dark-1);
+      padding-left: 1.2rem;
+    }
+
+  }
+
+  &__price {
+    font-size: 1.6rem;
+    line-height: 1.3;
+    font-weight: 500;
+    color: var(--color-primary-dark-4);
+    margin-top: 1.1828rem;
+
+    &--amount {
+      color: var(--color-primary);
+    }
+  }
 
   &:hover &__img-container>img {
     transform: scale(1.2);
@@ -150,8 +210,12 @@
   }
 
   &:hover &__slide-btn {
+    visibility: visible;
     opacity: 100%;
   }
 
+  &:hover &__slide-dot:not(&__slide-dot--active) {
+    opacity: 70%;
+  }
 
 }

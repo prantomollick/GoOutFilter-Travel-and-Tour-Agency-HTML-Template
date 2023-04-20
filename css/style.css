@@ -29,12 +29,14 @@ $breakpoint argument choices:
   --color-primary-dark-2: #13357B;
   --color-primary-dark-3: #0D2857;
   --color-primary-dark-4: #051036;
+  --color-secondary-1: #F8D448;
   --color-grey-light-1: #E5F0FD;
   --color-grey-light-2: #DDDDDD;
   --color-grey-light-3: #DADFE6;
   --color-grey-light-4: #f5f5f5;
   --color-grey-dark-1: #697488;
   --color-white: #fff;
+  --color-black: #000;
   --box-shadow-light-1: 0px 1rem 3.5rem 0px rgba(5, 16, 54, 0.1); }
 
 *,
@@ -111,6 +113,12 @@ body {
   .badge--dark {
     background-color: var(--color-primary-dark-4);
     color: var(--color-white); }
+  .badge--blue {
+    background-color: var(--color-primary);
+    color: var(--color-white); }
+  .badge--yellow {
+    background-color: var(--color-secondary-1);
+    color: var(--color-black); }
 
 .btn {
   font-size: 1.5rem;
@@ -404,6 +412,7 @@ body {
     color: var(--color-primary-dark-4);
     z-index: 3;
     transition: all 0.2s ease;
+    visibility: hidden;
     opacity: 0;
     -webkit-transition: all 0.3s cubic-bezier(0.78, 0.13, 0.15, 0.86);
     transition: all 0.3s cubic-bezier(0.78, 0.13, 0.15, 0.86); }
@@ -422,8 +431,10 @@ body {
   .hotel__slide-dots {
     position: absolute;
     bottom: 2rem;
-    left: 12rem;
+    left: 0;
+    width: 100%;
     display: flex;
+    justify-content: center;
     gap: 0.7rem;
     z-index: 4; }
   .hotel__slide-dot {
@@ -432,27 +443,69 @@ body {
     height: 0.6rem;
     border-radius: 10rem;
     background-color: var(--color-white);
-    opacity: 70%; }
+    opacity: 0;
+    transition: all 0.3s cubic-bezier(0.78, 0.13, 0.15, 0.86); }
   .hotel__slide-dot--active {
     opacity: 100%;
     transform: scale(1.1); }
   .hotel__title {
     margin: 1rem 0 0.5rem 0; }
     .hotel__title--span {
-      line-height: 1.15;
       font-size: 1.8rem;
+      line-height: 3rem;
       color: var(--color-primary-dark-4);
       transition: all 0.2s ease;
       background-image: linear-gradient(transparent 24px, black 20px);
       background-repeat: no-repeat;
       background-size: 0%;
       transition: background-size 0.3s cubic-bezier(0.785, 0.135, 0.15, 0.86) 0s; }
+  .hotel__addr {
+    font-size: 1.4rem;
+    color: var(--color-grey-dark-1);
+    font-weight: 400; }
+  .hotel__footer {
+    margin-top: 2rem; }
+  .hotel__rating {
+    display: flex;
+    align-items: center; }
+    .hotel__rating--value {
+      font-size: 1.2rem;
+      font-weight: 600;
+      width: 3rem;
+      height: 3rem;
+      border-radius: 4px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: var(--color-primary);
+      color: var(--color-white); }
+    .hotel__rating--comment {
+      font-size: 1.4rem;
+      font-weight: 500;
+      color: var(--color-primary-dark-4);
+      padding-left: 0.9rem; }
+    .hotel__rating--reviews {
+      font-size: 1.4rem;
+      font-weight: 400;
+      color: var(--color-grey-dark-1);
+      padding-left: 1.2rem; }
+  .hotel__price {
+    font-size: 1.6rem;
+    line-height: 1.3;
+    font-weight: 500;
+    color: var(--color-primary-dark-4);
+    margin-top: 1.1828rem; }
+    .hotel__price--amount {
+      color: var(--color-primary); }
   .hotel:hover .hotel__img-container > img {
     transform: scale(1.2); }
   .hotel:hover .hotel__title--span {
     background-size: 100%; }
   .hotel:hover .hotel__slide-btn {
+    visibility: visible;
     opacity: 100%; }
+  .hotel:hover .hotel__slide-dot:not(.hotel__slide-dot--active) {
+    opacity: 70%; }
 
 .header {
   display: flex;
@@ -646,53 +699,58 @@ body {
   display: flex;
   gap: 3rem; }
 
-.recommend__head {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-end;
-  margin-bottom: 4rem; }
-
-.recommend__select {
-  position: relative; }
-
-.recommend__selected {
-  font-size: 1.6rem;
-  font-weight: 500;
-  color: var(--color-primary-dark-4);
-  padding: 1rem 2rem;
-  border: 1px solid var(--color-grey-light-2);
-  border-radius: 4px;
-  cursor: pointer; }
-  .recommend__selected i {
-    font-size: 1.4rem;
-    margin-left: 5.5rem; }
-
-.recommend__options {
-  display: none;
-  position: absolute;
-  top: 0;
-  left: 0;
-  list-style: none;
-  min-width: 16rem;
-  transform: translate(0rem, 5.5rem);
-  padding: 1rem 0.5rem;
-  border: 1px solid var(--color-grey-light-2);
-  border-radius: 4px; }
-  .recommend__options--link, .recommend__options--link:link, .recommend__options--link:visited {
-    text-decoration: none;
+.recommend {
+  overflow-x: hidden; }
+  .recommend__head {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 4rem; }
+  .recommend__select {
+    position: relative; }
+  .recommend__selected {
+    font-size: 1.6rem;
+    font-weight: 500;
     color: var(--color-primary-dark-4);
-    display: block;
-    font-weight: 400;
-    font-size: 1.4rem;
-    padding: 0.5rem 2rem;
-    transition: all 0.2s ease; }
-  .recommend__options--link:hover {
-    color: var(--color-primary);
-    font-weight: 500; }
-
-.recommend__product:link, .recommend__product:visited {
-  text-decoration: none;
-  display: inline-block; }
+    padding: 1rem 2rem;
+    border: 1px solid var(--color-grey-light-2);
+    border-radius: 4px;
+    cursor: pointer; }
+    .recommend__selected i {
+      font-size: 1.4rem;
+      margin-left: 5.5rem; }
+  .recommend__options {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    list-style: none;
+    min-width: 16rem;
+    transform: translate(0rem, 5.5rem);
+    padding: 1rem 0.5rem;
+    border: 1px solid var(--color-grey-light-2);
+    border-radius: 4px; }
+    .recommend__options--link, .recommend__options--link:link, .recommend__options--link:visited {
+      text-decoration: none;
+      color: var(--color-primary-dark-4);
+      display: block;
+      font-weight: 400;
+      font-size: 1.4rem;
+      padding: 0.5rem 2rem;
+      transition: all 0.2s ease; }
+    .recommend__options--link:hover {
+      color: var(--color-primary);
+      font-weight: 500; }
+  .recommend__product-slides {
+    display: flex;
+    gap: 3rem; }
+  .recommend__product {
+    flex: 30rem 0 0;
+    -ms-flex: 30rem 0 0;
+    transform: translateX(-99rem); }
+    .recommend__product:link, .recommend__product:visited {
+      text-decoration: none;
+      display: inline-block; }
 
 .header {
   width: 100vw;

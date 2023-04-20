@@ -13,4 +13,14 @@
     color: var(--color-white);
   }
 
+  &--blue {
+    background-color: var(--color-primary);
+    color: var(--color-white);
+  }
+
+  &--yellow {
+    background-color: var(--color-secondary-1);
+    color: var(--color-black);
+  }
+
 }
