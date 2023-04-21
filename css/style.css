@@ -114,6 +114,15 @@ body {
 .mb-3 {
   margin-bottom: 3rem; }
 
+.mb-4 {
+  margin-bottom: 4rem; }
+
+.mb-5 {
+  margin-bottom: 5rem; }
+
+.mb-6 {
+  margin-bottom: 6rem; }
+
 .reaction {
   width: 3rem;
   height: 3rem;
@@ -830,6 +839,67 @@ body {
   line-height: 1.2;
   font-weight: 400; }
 
+.review {
+  display: -ms-grid;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(52rem, 1fr));
+  grid-column-gap: 14rem;
+  align-items: center; }
+  .review__message--title {
+    width: 35.3rem;
+    line-height: 1.5; }
+  .review__message--text {
+    line-height: 1.6; }
+  .review__message-count {
+    display: flex;
+    gap: 12.4rem; }
+  .review__message--users {
+    display: flex;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    line-height: 1.45; }
+  .review__message--rating {
+    display: flex;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    line-height: 1.45; }
+    .review__message--rating-star {
+      margin-top: 0.8375rem; }
+  .review-comment__user {
+    display: flex;
+    align-items: center;
+    gap: 3rem; }
+    .review-comment__user--picture {
+      width: 8rem;
+      height: 8rem; }
+      .review-comment__user--picture img {
+        width: 100%;
+        height: 100%; }
+    .review-comment__user--details > p:first-child {
+      font-weight: 500; }
+  .review-comment__text {
+    font-weight: 500;
+    line-height: 3rem; }
+  .review-comment__range {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    font-weight: 500;
+    line-height: 3rem; }
+    .review-comment__range--line {
+      width: 30rem;
+      height: 2px;
+      background-color: var(--color-grey-light-2);
+      position: relative; }
+      .review-comment__range--line::before {
+        content: '';
+        width: 40%;
+        height: 100%;
+        background-color: var(--color-primary-dark-4);
+        position: absolute;
+        top: 0;
+        left: 0; }
+
 .header {
   width: 100vw;
   position: absolute;
@@ -851,3 +921,7 @@ body {
 
 .section-service {
   padding: 12rem 0; }
+
+.section-review {
+  padding: 12rem 0;
+  background-color: var(--color-grey-light-1); }

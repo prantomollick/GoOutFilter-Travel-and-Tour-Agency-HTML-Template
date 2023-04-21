@@ -1,0 +1,31 @@
+.service {
+
+  &__list {
+    display: -ms-grid;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+    -ms-grid-columns: repeat(auto-fit, minmax(30rem, 1fr));
+    grid-column-gap: 19.5rem;
+    align-items: start;
+  }
+
+  &__list-item {
+    text-align: center;
+  }
+
+  &__icon {
+    width: 7rem;
+    height: 7rem;
+    display: inline-block;
+  }
+
+  &__heading {
+    line-height: 1.15;
+    font-weight: 500;
+  }
+
+  &__text {
+    line-height: 1.2;
+    font-weight: 400;
+  }
+}
