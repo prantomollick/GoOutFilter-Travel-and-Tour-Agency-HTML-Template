@@ -1,0 +1,16 @@
+.inspiration__head {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.inspiration__list {
+  display: flex;
+  gap: 3rem;
+
+  &--item:link,
+  &--item:visited {
+    display: inline-block;
+    text-decoration: none;
+    flex: 41rem 0 0;
+  }
+}
