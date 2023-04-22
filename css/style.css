@@ -87,6 +87,9 @@ body {
   opacity: 0.3;
   margin: 0 2rem; }
 
+.color-hover:hover {
+  color: var(--color-primary); }
+
 .text-lg-1 {
   font-size: 3rem; }
 
@@ -94,9 +97,12 @@ body {
   font-size: 1.8rem; }
 
 .text-sm-1 {
-  font-size: 1.5rem; }
+  font-size: 1.4rem; }
 
 .text-sm-2 {
+  font-size: 1.5rem; }
+
+.text-sm-3 {
   font-size: 1.6rem; }
 
 .color-dark-1 {
@@ -122,6 +128,12 @@ body {
 
 .mb-6 {
   margin-bottom: 6rem; }
+
+.fw-medium {
+  font-weight: 500; }
+
+.fw-bold {
+  font-weight: 600; }
 
 .reaction {
   width: 3rem;
@@ -213,6 +225,23 @@ body {
     border-radius: 6rem; }
     .btn--rounded:hover {
       background-color: var(--color-primary-dark-1); }
+
+.tab-control {
+  display: flex; }
+  .tab-control__btn {
+    font-size: 1.5rem;
+    line-height: 1.466666666666667;
+    font-family: inherit;
+    font-weight: 500;
+    color: var(--color-primary-dark-4);
+    padding: 1.4rem 2.9rem;
+    border: none;
+    background: none;
+    cursor: pointer; }
+    .tab-control__btn:hover {
+      color: var(--color-primary); }
+    .tab-control__btn--active {
+      background-color: rgba(53, 84, 209, 0.05); }
 
 .search-form {
   display: flex;
@@ -932,7 +961,37 @@ body {
   .inspiration__list--item:link, .inspiration__list--item:visited {
     display: inline-block;
     text-decoration: none;
+    -ms-flex: 41rem 0 0;
     flex: 41rem 0 0; }
+
+.table__data-item {
+  display: -ms-grid;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr));
+  grid-column-gap: 18rem;
+  grid-row-gap: 2rem;
+  display: none; }
+  .table__data-item a:link,
+  .table__data-item a:visited {
+    text-decoration: none;
+    display: block; }
+  .table__data-item a:hover div:first-child {
+    position: relative;
+    display: inline-block;
+    color: var(--color-primary);
+    transition: all 0.2s ease; }
+    .table__data-item a:hover div:first-child::before {
+      content: '';
+      position: absolute;
+      background-color: var(--color-primary);
+      height: 1px;
+      width: 100%;
+      bottom: 0;
+      left: 0; }
+  .table__data-item--active {
+    display: block;
+    display: -ms-grid;
+    display: grid; }
 
 .header {
   width: 100vw;
@@ -962,3 +1021,6 @@ body {
 
 .section-inspiration {
   padding: 12rem 0; }
+
+.section-welove {
+  padding: 0 0 12rem 0; }

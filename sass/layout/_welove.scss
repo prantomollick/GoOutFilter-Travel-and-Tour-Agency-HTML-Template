@@ -1,0 +1,44 @@
+.table__data {
+  &-item {
+
+    display: -ms-grid;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr));
+    grid-column-gap: 18rem;
+    grid-row-gap: 2rem;
+    display: none;
+
+    a:link,
+    a:visited {
+      text-decoration: none;
+      display: block;
+    }
+
+    a:hover {
+      div:first-child {
+        position: relative;
+        display: inline-block;
+        color: var(--color-primary);
+        transition: all 0.2s ease;
+
+        &::before {
+          content: '';
+          position: absolute;
+          background-color: var(--color-primary);
+          height: 1px;
+          width: 100%;
+          bottom: 0;
+          left: 0;
+        }
+      }
+    }
+
+    &--active {
+      display: block;
+      display: -ms-grid;
+      display: grid;
+    }
+  }
+
+
+}
