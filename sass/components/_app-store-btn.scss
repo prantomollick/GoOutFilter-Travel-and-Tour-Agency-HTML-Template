@@ -1,0 +1,38 @@
+.footer__mobile--btn {
+  text-decoration: none;
+  display: inline-block;
+  width: 19rem;
+  height: 6rem;
+  border: 1px solid var(--color-grey-light-2);
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+}
+
+.app-store {
+  display: flex;
+  align-items: center;
+  gap: 2.3rem;
+  padding-left: 2rem;
+
+  &__icon {
+    font-size: 3rem;
+    color: var(--color-primary-dark-4);
+  }
+
+  &__text {
+
+    &--1 {
+      font-size: 1.4rem;
+      line-height: 1.428571428571429;
+      color: var(--color-grey-dark-1);
+    }
+
+    &--2 {
+      font-size: 1.5rem;
+      font-weight: 500;
+      line-height: 1.466666666666667;
+      color: var(--color-primary-dark-4);
+    }
+  }
+}
