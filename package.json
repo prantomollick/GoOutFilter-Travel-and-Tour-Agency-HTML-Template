@@ -11,7 +11,8 @@
     "dev": "live-server",
     "watch:sass": "node-sass sass/main.scss css/style.css -w",
     "start": "npm-run-all --parallel watch:sass dev",
-    "compile:sass": "node-sass sass/main.scss css/style.comp.css"
+    "compile:sass": "node-sass sass/main.scss css/style.comp.css",
+    "parcel:dev": "parcel index.html"
   },
   "keywords": [
     "HTML",
@@ -23,11 +24,18 @@
   "author": "Pranto Mollick",
   "license": "ISC",
   "devDependencies": {
+    "@parcel/transformer-sass": "^2.8.3",
     "autoprefixer": "^10.4.14",
     "concat": "^1.0.3",
     "css-loader": "^6.7.3",
     "node-sass": "^8.0.0",
     "npm-run-all": "^4.1.5",
+    "parcel": "^2.8.3",
     "postcss-cli": "^10.1.0"
+  },
+  "dependencies": {
+    "daterangepicker": "^3.1.0",
+    "jquery": "^3.6.4",
+    "moment": "^2.29.4"
   }
 }

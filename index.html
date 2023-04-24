@@ -13,7 +13,8 @@
     crossorigin="anonymous" />
   <title>GoOutFilter | Tra vel and Tour Agency</title>
   <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
-  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="sass/main.scss">
+  <script src="js/app.js" type="module"></script>
 </head>
 
 <body>
@@ -25,7 +26,21 @@
       <nav class="main-nav">
         <ul class="main-nav__list">
           <li class="main-nav__item">
-            <a href="#" class="main-nav__link">Home<i class="fa-solid fa-caret-down"></i></a>
+            <a href="#" class="main-nav__link" data-mainnav="1">Home<i class="fa-solid fa-caret-down"></i></a>
+            <div class="main-subnav main-subnav--1">
+              <ul class="main-subnav__list">
+                <li class="main-subnav__item"><a href="#" class="main-subnav__link">Home 1</a></li>
+                <li class="main-subnav__item"><a href="#" class="main-subnav__link">Home 2</a></li>
+                <li class="main-subnav__item"><a href="#" class="main-subnav__link">Home 3</a></li>
+                <li class="main-subnav__item"><a href="#" class="main-subnav__link">Home 4</a></li>
+                <li class="main-subnav__item"><a href="#" class="main-subnav__link">Home 5</a></li>
+                <li class="main-subnav__item"><a href="#" class="main-subnav__link">Home 6</a></li>
+                <li class="main-subnav__item"><a href="#" class="main-subnav__link">Home 7</a></li>
+                <li class="main-subnav__item"><a href="#" class="main-subnav__link">Home 8</a></li>
+                <li class="main-subnav__item"><a href="#" class="main-subnav__link">Home 9</a></li>
+                <li class="main-subnav__item"><a href="#" class="main-subnav__link">Home 10</a></li>
+              </ul>
+            </div>
           </li>
           <li class="main-nav__item">
             <a href="#" class="main-nav__link">Categories<i class="fa-solid fa-caret-down"></i></a>
@@ -86,8 +101,9 @@
             <input type="text" id="location" placeholder="Where are you going?" class="search-form__input">
           </div>
           <div class="search-form__group search-form__group--2">
-            <label for="check-inout" class="search-form__label">Check in - Check out</label>
-            <input type="text" id="check-inout" placeholder="Wed 2 Mar  -  Fri 11 Apr" class="search-form__input">
+            <label for="date-range" class="search-form__label">Check in - Check out</label>
+            <input type="text" id="date-range" name="date-range" placeholder="Wed 2 Mar  -  Fri 11 Apr"
+              class="search-form__input">
           </div>
           <div class="search-form__group search-form__group--3">
             <label for="guest" class="search-form__label">Guest</label>
@@ -1115,8 +1131,6 @@
     </section>
 
   </footer>
-
-
 
 </body>
 

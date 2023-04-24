@@ -34,6 +34,7 @@
       font-weight: 400;
       background-color: transparent;
       border: none;
+      cursor: pointer;
       color: var(--color-white);
 
       i {
@@ -49,6 +50,7 @@
       color: var(--color-white);
       display: flex;
       align-items: center;
+      cursor: pointer;
 
       &-icon {
         margin-right: 0.7rem;
@@ -72,12 +74,18 @@
     gap: 3.7rem;
   }
 
+  &__item {
+    position: relative;
+    padding: 3rem 0;
+  }
+
   &__link,
   &__link:link,
   &__link:visited {
     text-decoration: none;
     color: var(--color-white);
     font-weight: 500;
+
     font-size: 1.5rem;
     line-height: 1;
     display: flex;
@@ -91,6 +99,62 @@
   &__link:hover {
     color: var(--color-primary-dark-1)
   }
+}
 
+.main-subnav {
+  display: none;
+  position: absolute;
+  width: 24rem;
+  top: 100%;
+  left: 0;
+  background-color: var(--color-white);
+  box-shadow: var(--box-shadow-light-1);
+  padding: 2rem;
+  border-radius: 4px;
 
+  &::before {
+    content: '';
+    width: 0.8rem;
+    height: 0.8rem;
+    position: absolute;
+    bottom: 100%;
+    left: 2rem;
+    transform: rotate(45deg);
+    margin-bottom: -0.4rem;
+    background-color: var(--color-white);
+  }
+
+  &__list {
+    list-style: none;
+  }
+
+  &__item {}
+
+  &__link,
+  &__link:link,
+  &__link:visited {
+    color: var(--color-primary-dark-4);
+
+    border-radius: 4px;
+    padding: 1.4rem 0 1.4rem 1.5rem;
+    text-decoration: none;
+    display: block;
+    line-height: 1;
+  }
+
+  &__active {
+    background-color: rgba(53, 84, 209, 0.05);
+    color: var(--color-primary);
+  }
+
+  &__link:hover,
+  &__link:active {
+    background-color: rgba(53, 84, 209, 0.05);
+    color: var(--color-primary);
+  }
+
+}
+
+.main-nav__link:hover+.main-subnav {
+  display: block;
 }
