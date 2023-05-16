@@ -54,7 +54,12 @@ function locationSearch() {
     { cityName: "Madrid", addr: "Spain" },
     { cityName: "Santorini", addr: "Greece" },
   ];
+
   $(".loc__input").on("input", function () {
+    if ($(".search-loc").hasClass("hidden")) {
+      $(".search-loc").removeClass("hidden");
+    }
+
     setTimeout(() => {
       const query = $(this).val().toLowerCase();
       let result = findSuggestions(query, suggestions); //function should return array
@@ -84,7 +89,7 @@ function locationSearch() {
 
   //Suggestion popup control according to the input filed click
   $(".loc__input").on("click", function (e) {
-    $(".search-loc").toggle();
+    $(".search-loc").toggleClass("hidden");
     popup();
   });
 
@@ -107,7 +112,6 @@ function locationSearch() {
   $([$(".section-destinations")[0], $(".search-loc")[0]]).each(function () {
     observer.observe(this);
   });
-  // observer.observe($(".header")[0]);
 
   $(".search-form__group--1").on("click", function (e) {
     e.preventDefault();
@@ -120,12 +124,14 @@ function locationSearch() {
       $(locationItemEl).find(".search-loc__popup-title").text()
     );
 
-    $(".search-loc").toggle();
+    $(".search-loc").toggleClass("hidden");
   });
 
   $(document).on("click", function (e) {
     if (!$(e.target).closest(".search-form__group--1").length) {
-      $(".search-loc").hide();
+      if (!$(".search-loc").hasClass("hidden")) {
+        $(".search-loc").addClass("hidden");
+      }
     }
   });
 }
