@@ -12,22 +12,22 @@
     integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
     crossorigin="anonymous" />
   <title>GoOutFilter | Tra vel and Tour Agency</title>
-  <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
-  <link rel="stylesheet" href="sass/main.scss">
-  <script src="js/app.js" type="module"></script>
+  <link rel="shortcut icon" href="src/img/favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="./src/sass/main.scss">
+  <script src="./src/js/app.js" type="module"></script>
 </head>
 
 <body>
   <header class="header">
     <div class="header-left">
       <a href="#" class="header__logo">
-        <img src="img/main-logo.png" alt="Logo">
+        <img src="./src/img/main-logo.png" alt="Logo">
       </a>
       <nav class="main-nav">
         <ul class="main-nav__list">
           <li class="main-nav__item">
             <a href="#" class="main-nav__link" data-mainnav="1">Home<i class="fa-solid fa-caret-down"></i></a>
-            <div class="main-subnav main-subnav--1">
+            <div class="main-subnav">
               <ul class="main-subnav__list">
                 <li class="main-subnav__item"><a href="#" class="main-subnav__link">Home 1</a></li>
                 <li class="main-subnav__item"><a href="#" class="main-subnav__link">Home 2</a></li>
@@ -44,15 +44,237 @@
           </li>
           <li class="main-nav__item">
             <a href="#" class="main-nav__link">Categories<i class="fa-solid fa-caret-down"></i></a>
+            <div class="main-subnav main-subnav--active">
+              <div class="main-subnav__wrapper js-tab__ctrl">
+                <div class="tab-ctrl mb-3">
+                  <ul class="tab-ctrl__list">
+                    <li class="tab-ctrl__item"><button type="button" class="tab-ctrl__btn tab-ctrl__btn--active"
+                        data-tab-ctl="1">Hotel</button></li>
+                    <li class="tab-ctrl__item"><button type="button" class="tab-ctrl__btn"
+                        data-tab-ctl="2">Tour</button></li>
+                    <li class="tab-ctrl__item"><button type="button" class="tab-ctrl__btn"
+                        data-tab-ctl="3">Activity</button></li>
+                    <li class="tab-ctrl__item"><button type="button" class="tab-ctrl__btn" data-tab-ctl="4">Holiday
+                        Rental</button>
+                    </li>
+                    <li class="tab-ctrl__item"><button type="button" class="tab-ctrl__btn" data-tab-ctl="5">Car</button>
+                    </li>
+                    <li class="tab-ctrl__item"><button type="button" class="tab-ctrl__btn"
+                        data-tab-ctl="6">Cruise</button></li>
+                    <li class="tab-ctrl__item"><button type="button" class="tab-ctrl__btn"
+                        data-tab-ctl="7">Flights</button></li>
+                  </ul>
+                </div>
+
+                <div class="tab-details tab-details--1 tab-details__active">
+                  <div class="tab__list-wrap">
+                    <ul class="tab__list">
+                      <li class="tab__list--item">Hotel List</li>
+                      <li class="tab__list--item"><a href="#" class="tab__list--link">Hotel List V1</a></li>
+                      <li class="tab__list--item"><a href="#" class="tab__list--link">Hotel List V2</a></li>
+                      <li class="tab__list--item"><a href="#" class="tab__list--link">Hotel List V3</a></li>
+                      <li class="tab__list--item"><a href="#" class="tab__list--link">Hotel List V4</a></li>
+                      <li class="tab__list--item"><a href="#" class="tab__list--link">Hotel List V5</a></li>
+                      <li class="tab__list--item"><a href="#" class="tab__list--link">Hotel List V6</a></li>
+                    </ul>
+                    <ul class="tab__list">
+                      <li class="tab__list--item">Hotel Single</li>
+                      <li class="tab__list--item"><a href="#" class="tab__list--link">Hotel List V1</a></li>
+                      <li class="tab__list--item"><a href="#" class="tab__list--link">Hotel List V2</a></li>
+                    </ul>
+                    <ul class="tab__list">
+                      <li class="tab__list--item">Hotel Booking</li>
+                      <li class="tab__list--item"><a href="#" class="tab__list--link">Booking Page</a></li>
+                    </ul>
+                  </div>
+                  <div class="tab__card">
+                    <div class="tab__card-wrp">
+                      <img src="./src/img/subnav-travel-through-world.png" alt="you on trip" class="tab__card-img">
+                      <div class="tab__card-content">
+                        <h4 class="tab__card-heading mb-2">Things to do on<br>your trip</h4>
+                        <a href="#hero" class="tab__card-btn">Experinces</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="tab-details tab-details--2">
+                  <div class="tab__list-wrap">
+                    <ul class="tab__list">
+                      <li class="tab__list--item">Tour List</li>
+                      <li class="tab__list--item"><a href="#" class="tab__list--link">Tour List V1</a></li>
+                      <li class="tab__list--item"><a href="#" class="tab__list--link">Tour List V2</a></li>
+                      <li class="tab__list--item"><a href="#" class="tab__list--link">Tour List V3</a></li>
+                    </ul>
+                    <ul class="tab__list">
+                      <li class="tab__list--item">Tour Pages</li>
+                      <li class="tab__list--item"><a href="#" class="tab__list--link">Tour Map</a></li>
+                      <li class="tab__list--item"><a href="#" class="tab__list--link">Tour Single</a></li>
+                    </ul>
+                  </div>
+                  <div class="tab__card">
+                    <div class="tab__card-wrp">
+                      <img src="./src/img/tour.jpg" alt="you on trip" class="tab__card-img">
+                      <div class="tab__card-content">
+                        <h4 class="tab__card-heading mb-2">Things to do on<br>your Tour</h4>
+                        <a href="#hero" class="tab__card-btn">See all Tour</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="tab-details tab-details--3">
+                  <div class="tab__list-wrap">
+                    <ul class="tab__list">
+                      <li class="tab__list--item">Activity List</li>
+                      <li class="tab__list--item"><a href="#" class="tab__list--link">Activity List V1</a></li>
+                      <li class="tab__list--item"><a href="#" class="tab__list--link">Activity List V2</a></li>
+                    </ul>
+                    <ul class="tab__list">
+                      <li class="tab__list--item">Activity Pages</li>
+                      <li class="tab__list--item"><a href="#" class="tab__list--link">Activity Map</a></li>
+                      <li class="tab__list--item"><a href="#" class="tab__list--link">Activity Single</a></li>
+                    </ul>
+                  </div>
+                  <div class="tab__card">
+                    <div class="tab__card-wrp">
+                      <img src="./src/img/activity.jpg" alt="you on trip" class="tab__card-img">
+                      <div class="tab__card-content">
+                        <h4 class="tab__card-heading mb-2">Things to do on Your<br>activity</h4>
+                        <a href="#hero" class="tab__card-btn">See Activity</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="tab-details tab-details--4">
+                  <div class="tab__list-wrap">
+                    <ul class="tab__list">
+                      <li class="tab__list--item">Rental List</li>
+                      <li class="tab__list--item"><a href="#" class="tab__list--link">Rental List V1</a></li>
+                      <li class="tab__list--item"><a href="#" class="tab__list--link">Rental List V2</a></li>
+                    </ul>
+                    <ul class="tab__list">
+                      <li class="tab__list--item">Rental Pages</li>
+                      <li class="tab__list--item"><a href="#" class="tab__list--link">Rental Map</a></li>
+                      <li class="tab__list--item"><a href="#" class="tab__list--link">Rental Single</a></li>
+                    </ul>
+                  </div>
+                  <div class="tab__card">
+                    <div class="tab__card-wrp">
+                      <img src="./src/img/rental.jpg" alt="you on trip" class="tab__card-img">
+                      <div class="tab__card-content">
+                        <h4 class="tab__card-heading mb-2">Things to do on your<br>rentals</h4>
+                        <a href="#hero" class="tab__card-btn">See Rental</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="tab-details tab-details--5">
+                  <div class="tab__list-wrap">
+                    <ul class="tab__list">
+                      <li class="tab__list--item">Car List</li>
+                      <li class="tab__list--item"><a href="#" class="tab__list--link">Car List V1</a></li>
+                      <li class="tab__list--item"><a href="#" class="tab__list--link">Car List V2</a></li>
+                      <li class="tab__list--item"><a href="#" class="tab__list--link">Car List V3</a></li>
+                    </ul>
+                    <ul class="tab__list">
+                      <li class="tab__list--item">Car Pages</li>
+                      <li class="tab__list--item"><a href="#" class="tab__list--link">Car Map</a></li>
+                      <li class="tab__list--item"><a href="#" class="tab__list--link">Car Single</a></li>
+                    </ul>
+                  </div>
+                  <div class="tab__card">
+                    <div class="tab__card-wrp">
+                      <img src="./src/img/rentcar.jpg" alt="you on Rent Car" class="tab__card-img">
+                      <div class="tab__card-content">
+                        <h4 class="tab__card-heading mb-2">Things to do on your<br>Next Car</h4>
+                        <a href="#hero" class="tab__card-btn">See Car</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="tab-details tab-details--6">
+                  <div class="tab__list-wrap">
+                    <ul class="tab__list">
+                      <li class="tab__list--item">Cruise List</li>
+                      <li class="tab__list--item"><a href="#" class="tab__list--link">Cruise List V1</a></li>
+                      <li class="tab__list--item"><a href="#" class="tab__list--link">Cruise List V2</a></li>
+                    </ul>
+                    <ul class="tab__list">
+                      <li class="tab__list--item">Cruise Pages</li>
+                      <li class="tab__list--item"><a href="#" class="tab__list--link">Cruise Map</a></li>
+                      <li class="tab__list--item"><a href="#" class="tab__list--link">Cruise Single</a></li>
+                    </ul>
+                  </div>
+                  <div class="tab__card">
+                    <div class="tab__card-wrp">
+                      <img src="./src/img/cruise.jpg" alt="you on Cruise" class="tab__card-img">
+                      <div class="tab__card-content">
+                        <h4 class="tab__card-heading mb-2">Things to do on your<br>Next Car</h4>
+                        <a href="#hero" class="tab__card-btn">See Car</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="tab-details tab-details--7">
+                  <div class="tab__list-wrap">
+                    <ul class="tab__list">
+                      <li class="tab__list--item">Cruise List</li>
+                      <li class="tab__list--item"><a href="#" class="tab__list--link">Cruise List V1</a></li>
+                      <li class="tab__list--item"><a href="#" class="tab__list--link">Cruise List V2</a></li>
+                    </ul>
+                    <ul class="tab__list">
+                      <li class="tab__list--item">Cruise Pages</li>
+                      <li class="tab__list--item"><a href="#" class="tab__list--link">Cruise Map</a></li>
+                      <li class="tab__list--item"><a href="#" class="tab__list--link">Cruise Single</a></li>
+                    </ul>
+                  </div>
+                  <div class="tab__card">
+                    <div class="tab__card-wrp">
+                      <img src="./src/img/flights.jpg" alt="You on Flights" class="tab__card-img">
+                      <div class="tab__card-content">
+                        <h4 class="tab__card-heading mb-2">Things to do on your<br>Next Car</h4>
+                        <a href="#hero" class="tab__card-btn">See Car</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+            </div>
           </li>
           <li class="main-nav__item">
             <a href="#" class="main-nav__link">Destination</a>
           </li>
           <li class="main-nav__item">
             <a href="#" class="main-nav__link">Blog<i class="fa-solid fa-caret-down"></i></a>
+            <div class="main-subnav">
+              <ul class="main-subnav__list">
+                <li class="main-subnav__item"><a href="#" class="main-subnav__link">Blog List V1</a></li>
+                <li class="main-subnav__item"><a href="#" class="main-subnav__link">Blog List V2</a></li>
+                <li class="main-subnav__item"><a href="#" class="main-subnav__link">Blog List V3</a></li>
+              </ul>
+            </div>
           </li>
           <li class="main-nav__item">
             <a href="#" class="main-nav__link">Pages<i class="fa-solid fa-caret-down"></i></a>
+            <div class="main-subnav">
+              <ul class="main-subnav__list">
+                <li class="main-subnav__item"><a href="#" class="main-subnav__link">404</a></li>
+                <li class="main-subnav__item"><a href="#" class="main-subnav__link">About</a></li>
+                <li class="main-subnav__item"><a href="#" class="main-subnav__link">Become expert</a></li>
+                <li class="main-subnav__item"><a href="#" class="main-subnav__link">Help Center</a></li>
+                <li class="main-subnav__item"><a href="#" class="main-subnav__link">Login</a></li>
+                <li class="main-subnav__item"><a href="#" class="main-subnav__link">Register</a></li>
+                <li class="main-subnav__item"><a href="#" class="main-subnav__link">Terms</a></li>
+                <li class="main-subnav__item"><a href="#" class="main-subnav__link">Invoice</a></li>
+                <li class="main-subnav__item"><a href="#" class="main-subnav__link">UI elements</a></li>
+              </ul>
+            </div>
           </li>
           <li class="main-nav__item">
             <a href="#" class="main-nav__link">Contact</a>
@@ -65,8 +287,8 @@
         <button type="button" class="header__locale--currency">USD<i class="fa-solid fa-caret-down"></i></button>
         <div class="divider">
         </div>
-        <button type="button" class="header__locale--region"><img src="img/flag.png" class="header__locale--region-icon"
-            alt="Flag">Unite
+        <button type="button" class="header__locale--region"><img src="./src/img/flag.png"
+            class="header__locale--region-icon" alt="Flag">Unite
           Kingdom<i class="fa-solid fa-caret-down"></i></button>
       </div>
       <a href="#" class="btn__link btn__link--light">Become An Expert</a>
@@ -77,7 +299,7 @@
   <main class="main">
     <section class="section-hero hero" id="hero">
       <div class="hero-bg">
-        <img src="img/hero-bg.webp" alt="hero-img">
+        <img src="./src/img/hero-bg.webp" alt="hero-img">
       </div>
       <div class="container hero__content">
         <h1 class="heading-primary">Find Next Place To Visit</h1>
@@ -95,10 +317,55 @@
           </ul>
         </nav>
 
-        <form action="#" class="search-form" id="hotel-search">
+        <!-- Search Form -->
+        <form action="#" class="search-form" id="hotel-search" autocomplete="off">
           <div class="search-form__group search-form__group--1">
             <label for="location" class="search-form__label">Location</label>
-            <input type="text" id="location" placeholder="Where are you going?" class="search-form__input">
+            <input type="text" id="location" placeholder="Where are you going?" class="search-form__input loc__input">
+            <div class="search-loc search-loc--top">
+              <ul class="search-loc__popup">
+                <li class="search-loc__popup-item">
+                  <i class="fa-solid fa-location-dot search-loc__popup-icon"></i>
+                  <div class="search-loc__popup-text">
+                    <h4 class="search-loc__popup-title">London</h4>
+                    <span class="search-loc__popup-addr">Greater London, United Kingdom</span>
+                  </div>
+                </li>
+
+                <li class="search-loc__popup-item">
+                  <i class="fa-solid fa-location-dot search-loc__popup-icon"></i>
+                  <div class="search-loc__popup-text">
+                    <h4 class="search-loc__popup-title">New York</h4>
+                    <span class="search-loc__popup-addr">New York State, United States</span>
+                  </div>
+                </li>
+
+                <li class="search-loc__popup-item">
+                  <i class="fa-solid fa-location-dot search-loc__popup-icon"></i>
+                  <div class="search-loc__popup-text">
+                    <h4 class="search-loc__popup-title">Paris</h4>
+                    <span class="search-loc__popup-addr">France</span>
+                  </div>
+                </li>
+
+                <li class="search-loc__popup-item">
+                  <i class="fa-solid fa-location-dot search-loc__popup-icon"></i>
+                  <div class="search-loc__popup-text">
+                    <h4 class="search-loc__popup-title">Madrid</h4>
+                    <span class="search-loc__popup-addr">Spain</span>
+                  </div>
+                </li>
+
+                <li class="search-loc__popup-item">
+                  <i class="fa-solid fa-location-dot search-loc__popup-icon"></i>
+                  <div class="search-loc__popup-text">
+                    <h4 class="search-loc__popup-title">Santorini</h4>
+                    <span class="search-loc__popup-addr">Greece</span>
+                  </div>
+                </li>
+
+              </ul>
+            </div>
           </div>
           <div class="search-form__group search-form__group--2">
             <label for="date-range" class="search-form__label">Check in - Check out</label>
@@ -115,6 +382,7 @@
           </div>
           <button type="submit" class="btn btn--rounded"><i class="fa-solid fa-magnifying-glass"></i>Search</button>
         </form>
+        <!-- /Search Form -->
       </div>
     </section>
 
@@ -141,7 +409,7 @@
               <a href="#" class="destination-card">
                 <div class="destination-card__wrapper">
                   <div class="destination-card__img-wrapper">
-                    <img src="img/destination-1.jpg" alt="New york" class="destination-card__img">
+                    <img src="./src/img/destination-1.jpg" alt="New york" class="destination-card__img">
                   </div>
                   <div class="destination-card__content">
                     <p class="destination-card__text">14 Hotel - 22 Cars - 18 Tours - 95 Activity</p>
@@ -155,7 +423,7 @@
               <a href="#" class="destination-card">
                 <div class="destination-card__wrapper">
                   <div class="destination-card__img-wrapper">
-                    <img src="img/destination-2.jpg" alt="New york" class="destination-card__img">
+                    <img src="./src/img/destination-2.jpg" alt="New york" class="destination-card__img">
                   </div>
                   <div class="destination-card__content">
                     <p class="destination-card__text">14 Hotel - 22 Cars - 18 Tours - 95 Activity</p>
@@ -169,7 +437,7 @@
               <a href="#" class="destination-card">
                 <div class="destination-card__wrapper">
                   <div class="destination-card__img-wrapper">
-                    <img src="img/destination-3.jpg" alt="New york" class="destination-card__img">
+                    <img src="./src/img/destination-3.jpg" alt="New york" class="destination-card__img">
                   </div>
                   <div class="destination-card__content">
                     <p class="destination-card__text">14 Hotel - 22 Cars - 18 Tours - 95 Activity</p>
@@ -183,7 +451,7 @@
               <a href="#" class="destination-card">
                 <div class="destination-card__wrapper">
                   <div class="destination-card__img-wrapper">
-                    <img src="img/destination-4.jpg" alt="New york" class="destination-card__img">
+                    <img src="./src/img/destination-4.jpg" alt="New york" class="destination-card__img">
                   </div>
                   <div class="destination-card__content">
                     <p class="destination-card__text">14 Hotel - 22 Cars - 18 Tours - 95 Activity</p>
@@ -197,7 +465,7 @@
               <a href="#" class="destination-card">
                 <div class="destination-card__wrapper">
                   <div class="destination-card__img-wrapper">
-                    <img src="img/destination-5.jpg" alt="New york" class="destination-card__img">
+                    <img src="./src/img/destination-5.jpg" alt="New york" class="destination-card__img">
                   </div>
                   <div class="destination-card__content">
                     <p class="destination-card__text">14 Hotel - 22 Cars - 18 Tours - 95 Activity</p>
@@ -223,7 +491,7 @@
 
         <div class="destination__banner banner">
           <div class="banner__card banner__card--1">
-            <img src="img/destination-6.jpg" alt="you on trip" class="banner__card-img">
+            <img src="./src/img/destination-6.jpg" alt="you on trip" class="banner__card-img">
             <div class="banner__card-content">
               <h4 class="banner__card-heading banner__card-heading--1">Things to do on your trip</h4>
               <a href="#hero" class="banner__card-btn">Experinces</a>
@@ -231,7 +499,7 @@
           </div>
 
           <div class="banner__card banner__card--2">
-            <img src="img/destination-7.jpg" alt="you on trip" class="banner__card-img">
+            <img src="./src/img/destination-7.jpg" alt="you on trip" class="banner__card-img">
             <div class="banner__card-content">
               <p class="banner__card-text">Enjoy Summer Deals</p>
               <h4 class="banner__card-heading">Up to 70% Discount!</h4>
@@ -273,7 +541,7 @@
                 <article class="hotel">
                   <header class="hotel__header">
                     <figure class="hotel__img-container">
-                      <img src="img/recommend-1.jpg" alt="recommend-1">
+                      <img src="./src/img/recommend-1.jpg" alt="recommend-1">
                     </figure>
                     <div class="hotel__badge badge badge--dark">Breakfast included</div>
                     <div class="hotel__reaction reaction reaction--heart"><i class="fa-regular fa-heart"></i></div>
@@ -297,19 +565,19 @@
                   <header class="hotel__header">
                     <div class="hotel__slide">
                       <figure class="hotel__img-container">
-                        <img src="img/recommend-1.jpg" alt="recommend-1">
+                        <img src="./src/img/recommend-1.jpg" alt="recommend-1">
                       </figure>
                       <figure class="hotel__img-container">
-                        <img src="img/recommend-2.jpg" alt="recommend-2">
+                        <img src="./src/img/recommend-2.jpg" alt="recommend-2">
                       </figure>
                       <figure class="hotel__img-container">
-                        <img src="img/recommend-3.jpg" alt="recommend-3">
+                        <img src="./src/img/recommend-3.jpg" alt="recommend-3">
                       </figure>
                       <figure class="hotel__img-container">
-                        <img src="img/recommend-4.jpg" alt="recommend-4">
+                        <img src="./src/img/recommend-4.jpg" alt="recommend-4">
                       </figure>
                       <figure class="hotel__img-container">
-                        <img src="img/recommend-5.jpg" alt="recommend-5">
+                        <img src="./src/img/recommend-5.jpg" alt="recommend-5">
                       </figure>
                     </div>
                     <div class="hotel__slide-dots">
@@ -344,7 +612,7 @@
                 <article class="hotel">
                   <header class="hotel__header">
                     <figure class="hotel__img-container">
-                      <img src="img/recommend-2.jpg" alt="recommend-1">
+                      <img src="./src/img/recommend-2.jpg" alt="recommend-1">
                     </figure>
                     <div class="hotel__badge badge badge--blue">Best Seller</div>
                     <div class="hotel__reaction reaction reaction--heart"><i class="fa-regular fa-heart"></i></div>
@@ -368,7 +636,7 @@
                 <article class="hotel">
                   <header class="hotel__header">
                     <figure class="hotel__img-container">
-                      <img src="img/recommend-4.jpg" alt="recommend-1">
+                      <img src="./src/img/recommend-4.jpg" alt="recommend-1">
                     </figure>
                     <div class="hotel__badge badge badge--yellow">Breakfast included</div>
                     <div class="hotel__reaction reaction reaction--heart"><i class="fa-regular fa-heart"></i></div>
@@ -392,7 +660,7 @@
                 <article class="hotel">
                   <header class="hotel__header">
                     <figure class="hotel__img-container">
-                      <img src="img/recommend-1.jpg" alt="recommend-1">
+                      <img src="./src/img/recommend-1.jpg" alt="recommend-1">
                     </figure>
                     <div class="hotel__badge badge badge--dark">Breakfast included</div>
                     <div class="hotel__reaction reaction reaction--heart"><i class="fa-regular fa-heart"></i></div>
@@ -416,19 +684,19 @@
                   <header class="hotel__header">
                     <div class="hotel__slide">
                       <figure class="hotel__img-container">
-                        <img src="img/recommend-1.jpg" alt="recommend-1">
+                        <img src="./src/img/recommend-1.jpg" alt="recommend-1">
                       </figure>
                       <figure class="hotel__img-container">
-                        <img src="img/recommend-2.jpg" alt="recommend-2">
+                        <img src="./src/img/recommend-2.jpg" alt="recommend-2">
                       </figure>
                       <figure class="hotel__img-container">
-                        <img src="img/recommend-3.jpg" alt="recommend-3">
+                        <img src="./src/img/recommend-3.jpg" alt="recommend-3">
                       </figure>
                       <figure class="hotel__img-container">
-                        <img src="img/recommend-4.jpg" alt="recommend-4">
+                        <img src="./src/img/recommend-4.jpg" alt="recommend-4">
                       </figure>
                       <figure class="hotel__img-container">
-                        <img src="img/recommend-5.jpg" alt="recommend-5">
+                        <img src="./src/img/recommend-5.jpg" alt="recommend-5">
                       </figure>
                     </div>
                     <div class="hotel__slide-dots">
@@ -463,7 +731,7 @@
                 <article class="hotel">
                   <header class="hotel__header">
                     <figure class="hotel__img-container">
-                      <img src="img/recommend-2.jpg" alt="recommend-1">
+                      <img src="./src/img/recommend-2.jpg" alt="recommend-1">
                     </figure>
                     <div class="hotel__badge badge badge--blue">Best Seller</div>
                     <div class="hotel__reaction reaction reaction--heart"><i class="fa-regular fa-heart"></i></div>
@@ -487,7 +755,7 @@
                 <article class="hotel">
                   <header class="hotel__header">
                     <figure class="hotel__img-container">
-                      <img src="img/recommend-4.jpg" alt="recommend-1">
+                      <img src="./src/img/recommend-4.jpg" alt="recommend-1">
                     </figure>
                     <div class="hotel__badge badge badge--yellow">Breakfast included</div>
                     <div class="hotel__reaction reaction reaction--heart"><i class="fa-regular fa-heart"></i></div>
@@ -641,7 +909,7 @@
           <div class="review-comment">
             <div class="review-comment__user mb-3">
               <figure class="review-comment__user--picture">
-                <img src="img/client-01.png" alt="Annette Black">
+                <img src="./src/img/client-01.png" alt="Annette Black">
               </figure>
               <div class="review-comment__user--details">
                 <p class="color-dark-1 text-sm-2">Annette Black</p>
@@ -671,7 +939,7 @@
           <a href="#" class="inspiration__list--item">
             <div class="ins-Card">
               <figure class="ins-Card__img">
-                <img src="img/inspiration-02.jpg" alt="Travel Inspire Photo">
+                <img src="./src/img/inspiration-02.jpg" alt="Travel Inspire Photo">
               </figure>
               <h4 class="ins-Card__title text-md-1 color-dark-1">10 European ski destinations you should visit this
                 winter</h4>
@@ -681,7 +949,7 @@
           <a href="#" class="inspiration__list--item">
             <div class="ins-Card">
               <figure class="ins-Card__img">
-                <img src="img/inspiration-01.jpg" alt="Travel Inspire Photo">
+                <img src="./src/img/inspiration-01.jpg" alt="Travel Inspire Photo">
               </figure>
               <h4 class="ins-Card__title text-md-1 color-dark-1">10 European ski destinations you should visit this
                 winter</h4>
@@ -691,7 +959,7 @@
           <a href="#" class="inspiration__list--item">
             <div class="ins-Card">
               <figure class="ins-Card__img">
-                <img src="img/inspiration-03.jpg" alt="Travel Inspire Photo">
+                <img src="./src/img/inspiration-03.jpg" alt="Travel Inspire Photo">
               </figure>
               <h4 class="ins-Card__title text-md-1 color-dark-1">10 European ski destinations you should visit this
                 winter</h4>
@@ -1115,7 +1383,7 @@
                 <i class="fa-solid fa-globe"></i>
                 <a href="#">English (US)</a>
               </div>
-              <div class="toc-nav__region--currency">
+              <div class="toc-nav__region--gofency">
                 $&nbsp;<a href="#">USD</a>
               </div>
             </div>
@@ -1129,8 +1397,192 @@
         </div>
       </div>
     </section>
-
   </footer>
+
+  <div class="backdrop">
+  </div>
+  <!-- curr-modal__active -->
+  <div class="gof-modal">
+    <div class="gof-modal__header">
+      <h4 class="gof-modal__heading">Select your currency</h4>
+      <i class="fa-solid fa-xmark gof-modal__icon"></i>
+    </div>
+    <div class="gof-modal__items">
+      <div class="gof-modal__item">
+        <div class="gof-modal__item--title">United States dollar</div>
+        <div class="gof-modal__item--sign">USD<span> - &#36;</span></div>
+      </div>
+      <div class="gof-modal__item">
+        <div class="gof-modal__item--title">Australian dollar</div>
+        <div class="gof-modal__item--sign">AUD<span> - &#36;</span></div>
+      </div>
+      <div class="gof-modal__item">
+        <div class="gof-modal__item--title">Brazilian real</div>
+        <div class="gof-modal__item--sign">BRL<span> - R&#36;</span></div>
+      </div>
+      <div class="gof-modal__item">
+        <div class="gof-modal__item--title">Bulgarian lev</div>
+        <div class="gof-modal__item--sign">BGN<span> - Лв.</span></div>
+      </div>
+      <div class="gof-modal__item">
+        <div class="gof-modal__item--title">Canadian dollar</div>
+        <div class="gof-modal__item--sign">CAD<span> - &#36;</span></div>
+      </div>
+      <div class="gof-modal__item">
+        <div class="gof-modal__item--title">United States dollar</div>
+        <div class="gof-modal__item--sign">USD<span> - &#36;</span></div>
+      </div>
+      <div class="gof-modal__item">
+        <div class="gof-modal__item--title">Australian dollar</div>
+        <div class="gof-modal__item--sign">AUD<span> - &#36;</span></div>
+      </div>
+      <div class="gof-modal__item">
+        <div class="gof-modal__item--title">Brazilian real</div>
+        <div class="gof-modal__item--sign">BRL<span> - R&#36;</span></div>
+      </div>
+      <div class="gof-modal__item">
+        <div class="gof-modal__item--title">Bulgarian lev</div>
+        <div class="gof-modal__item--sign">BGN<span> - Лв.</span></div>
+      </div>
+      <div class="gof-modal__item">
+        <div class="gof-modal__item--title">Canadian dollar</div>
+        <div class="gof-modal__item--sign">CAD<span> - &#36;</span></div>
+      </div>
+      <div class="gof-modal__item">
+        <div class="gof-modal__item--title">United States dollar</div>
+        <div class="gof-modal__item--sign">USD<span> - &#36;</span></div>
+      </div>
+      <div class="gof-modal__item">
+        <div class="gof-modal__item--title">Australian dollar</div>
+        <div class="gof-modal__item--sign">AUD<span> - &#36;</span></div>
+      </div>
+      <div class="gof-modal__item">
+        <div class="gof-modal__item--title">Brazilian real</div>
+        <div class="gof-modal__item--sign">BRL<span> - R&#36;</span></div>
+      </div>
+      <div class="gof-modal__item">
+        <div class="gof-modal__item--title">Bulgarian lev</div>
+        <div class="gof-modal__item--sign">BGN<span> - Лв.</span></div>
+      </div>
+      <div class="gof-modal__item">
+        <div class="gof-modal__item--title">Canadian dollar</div>
+        <div class="gof-modal__item--sign">CAD<span> - &#36;</span></div>
+      </div>
+      <div class="gof-modal__item">
+        <div class="gof-modal__item--title">United States dollar</div>
+        <div class="gof-modal__item--sign">USD<span> - &#36;</span></div>
+      </div>
+      <div class="gof-modal__item">
+        <div class="gof-modal__item--title">Australian dollar</div>
+        <div class="gof-modal__item--sign">AUD<span> - &#36;</span></div>
+      </div>
+      <div class="gof-modal__item">
+        <div class="gof-modal__item--title">Brazilian real</div>
+        <div class="gof-modal__item--sign">BRL<span> - R&#36;</span></div>
+      </div>
+      <div class="gof-modal__item">
+        <div class="gof-modal__item--title">Bulgarian lev</div>
+        <div class="gof-modal__item--sign">BGN<span> - Лв.</span></div>
+      </div>
+      <div class="gof-modal__item">
+        <div class="gof-modal__item--title">Canadian dollar</div>
+        <div class="gof-modal__item--sign">CAD<span> - &#36;</span></div>
+      </div>
+
+    </div>
+
+  </div>
+  <!-- region-modal__active -->
+  <div class="gof-modal">
+    <div class="gof-modal__header">
+      <h4 class="gof-modal__heading">Select your language</h4>
+      <i class="fa-solid fa-xmark gof-modal__icon"></i>
+    </div>
+    <div class="gof-modal__items">
+      <div class="gof-modal__item">
+        <div class="gof-modal__item--title">English</div>
+        <div class="gof-modal__item--sign">United States</div>
+      </div>
+      <div class="gof-modal__item">
+        <div class="gof-modal__item--title">Türkçe</div>
+        <div class="gof-modal__item--sign">Turkey</div>
+      </div>
+      <div class="gof-modal__item">
+        <div class="gof-modal__item--title">Español</div>
+        <div class="gof-modal__item--sign">España</div>
+      </div>
+      <div class="gof-modal__item">
+        <div class="gof-modal__item--title">Français</div>
+        <div class="gof-modal__item--sign">France</div>
+      </div>
+      <div class="gof-modal__item">
+        <div class="gof-modal__item--title">Italiano</div>
+        <div class="gof-modal__item--sign">Italia</div>
+      </div>
+      <div class="gof-modal__item">
+        <div class="gof-modal__item--title">English</div>
+        <div class="gof-modal__item--sign">United States</div>
+      </div>
+      <div class="gof-modal__item">
+        <div class="gof-modal__item--title">Türkçe</div>
+        <div class="gof-modal__item--sign">Turkey</div>
+      </div>
+      <div class="gof-modal__item">
+        <div class="gof-modal__item--title">Español</div>
+        <div class="gof-modal__item--sign">España</div>
+      </div>
+      <div class="gof-modal__item">
+        <div class="gof-modal__item--title">Français</div>
+        <div class="gof-modal__item--sign">France</div>
+      </div>
+      <div class="gof-modal__item">
+        <div class="gof-modal__item--title">Italiano</div>
+        <div class="gof-modal__item--sign">Italia</div>
+      </div>
+      <div class="gof-modal__item">
+        <div class="gof-modal__item--title">English</div>
+        <div class="gof-modal__item--sign">United States</div>
+      </div>
+      <div class="gof-modal__item">
+        <div class="gof-modal__item--title">Türkçe</div>
+        <div class="gof-modal__item--sign">Turkey</div>
+      </div>
+      <div class="gof-modal__item">
+        <div class="gof-modal__item--title">Español</div>
+        <div class="gof-modal__item--sign">España</div>
+      </div>
+      <div class="gof-modal__item">
+        <div class="gof-modal__item--title">Français</div>
+        <div class="gof-modal__item--sign">France</div>
+      </div>
+      <div class="gof-modal__item">
+        <div class="gof-modal__item--title">Italiano</div>
+        <div class="gof-modal__item--sign">Italia</div>
+      </div>
+      <div class="gof-modal__item">
+        <div class="gof-modal__item--title">English</div>
+        <div class="gof-modal__item--sign">United States</div>
+      </div>
+      <div class="gof-modal__item">
+        <div class="gof-modal__item--title">Türkçe</div>
+        <div class="gof-modal__item--sign">Turkey</div>
+      </div>
+      <div class="gof-modal__item">
+        <div class="gof-modal__item--title">Español</div>
+        <div class="gof-modal__item--sign">España</div>
+      </div>
+      <div class="gof-modal__item">
+        <div class="gof-modal__item--title">Français</div>
+        <div class="gof-modal__item--sign">France</div>
+      </div>
+      <div class="gof-modal__item">
+        <div class="gof-modal__item--title">Italiano</div>
+        <div class="gof-modal__item--sign">Italia</div>
+      </div>
+    </div>
+
+  </div>
+
 
 </body>
 

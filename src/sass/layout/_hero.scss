@@ -34,9 +34,8 @@
 
   &__content {
     position: absolute;
-    padding-bottom: 21.4rem;
     transition: all 0.4s ease;
-    transform: translateY(-20rem);
+    // transform: translateY(30rem);
     opacity: 0;
     animation: moveInTop 0.8s linear 0.4s forwards;
   }
