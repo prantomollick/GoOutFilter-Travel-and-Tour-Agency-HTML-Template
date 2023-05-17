@@ -1,9 +1,6 @@
-import "../sass/main.scss";
 import $ from "jquery";
-import moment from "moment";
-import daterangepicker from "daterangepicker";
 import { categoriesSubMenu } from "./layout/navigation.js";
-import { heroSearch, locationSearch } from "./layout/heroSearch.js";
+import { heroSearch, locationSearch, checkInOut } from "./layout/heroSearch.js";
 
 //Navigation
 categoriesSubMenu();
@@ -11,8 +8,10 @@ categoriesSubMenu();
 //hero search
 heroSearch();
 
-//search input
+//Form of hero search
 locationSearch();
+checkInOut();
+//checkinout
 
 // $(function () {
 //   $("#date-range").daterangepicker({

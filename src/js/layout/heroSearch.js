@@ -1,48 +1,17 @@
 import $ from "jquery";
+import moment from "moment";
+import daterangepicker from "daterangepicker";
 
 //showing heroSearch form id according to the navigation id.
 function heroSearch() {
   $(".hero-nav").on("click", function (e) {
     e.preventDefault();
     if (!(e.target.tagName.toLowerCase() === "a") && !e.target.href) return;
-
     $(".hero-nav__link").removeClass("hero-nav__active");
-
     $(e.target).addClass("hero-nav__active");
-
     //Change the from id attribute value for different search
     $(".search-form").attr("id", `${e.target.id}-search`);
   });
-}
-
-function findSuggestions(query, suggestions, limit = 5) {
-  const regex = new RegExp(query, "ig");
-  const suggLocations = suggestions.filter((suggs, i) => {
-    if (regex.test(suggs.cityName)) {
-      return suggs;
-    }
-  });
-  if (suggLocations.length < limit) {
-    return suggLocations;
-  } else {
-    return suggLocations.slice(0, 5);
-  }
-}
-
-function displaySuggestions(suggestions) {
-  const html = $.map(suggestions, function (sugg) {
-    return `
-      <li class="search-loc__popup-item">
-        <i class="fa-solid fa-location-dot search-loc__popup-icon"></i>
-        <div class="search-loc__popup-text">
-          <h4 class="search-loc__popup-title">${sugg.cityName}</h4>
-          <span class="search-loc__popup-addr">${sugg.addr}</span>
-        </div>
-      </li>
-      `;
-  }).join("");
-  $(".search-loc__popup").empty();
-  $(".search-loc__popup").get(0).insertAdjacentHTML("beforeend", html);
 }
 
 function locationSearch() {
@@ -55,18 +24,49 @@ function locationSearch() {
     { cityName: "Santorini", addr: "Greece" },
   ];
 
+  function suggestionPopupToggle() {}
+
+  function findSuggestions(query, suggestions, limit = 5) {
+    const regex = new RegExp(query, "ig");
+    const suggLocations = suggestions.filter((suggs, i) => {
+      if (regex.test(suggs.cityName)) {
+        return suggs;
+      }
+    });
+    if (suggLocations.length < limit) {
+      return suggLocations;
+    } else {
+      return suggLocations.slice(0, 5);
+    }
+  }
+
+  function renderSuggestions(suggestions) {
+    const html = $.map(suggestions, function (sugg) {
+      return `
+        <li class="search-loc__popup-item">
+          <i class="fa-solid fa-location-dot search-loc__popup-icon"></i>
+          <div class="search-loc__popup-text">
+            <h4 class="search-loc__popup-title">${sugg.cityName}</h4>
+            <span class="search-loc__popup-addr">${sugg.addr}</span>
+          </div>
+        </li>
+        `;
+    }).join("");
+    $(".search-loc__popup").empty();
+    $(".search-loc__popup").get(0).insertAdjacentHTML("beforeend", html);
+  }
+
   $(".loc__input").on("input", function () {
     if ($(".search-loc").hasClass("hidden")) {
       $(".search-loc").removeClass("hidden");
     }
-
     setTimeout(() => {
       const query = $(this).val().toLowerCase();
       let result = findSuggestions(query, suggestions); //function should return array
       if (result.length == 0) {
         result = suggestions;
       }
-      displaySuggestions(result);
+      renderSuggestions(result);
     }, 500);
   });
 
@@ -76,9 +76,6 @@ function locationSearch() {
     const searchLocElHight = $(".search-loc").height();
     const rect = {
       top: el.offset().top - $(window).scrollTop(),
-      // bottom:
-      //   $(window).height() -
-      //   (el.offset().top - $(window).scrollTop() + el.outerHeight()),
     };
     if (rect.top > searchLocElHight) {
       $(".search-loc").addClass("search-loc--top");
@@ -119,7 +116,6 @@ function locationSearch() {
     if (!locationItemEl) {
       return;
     }
-
     $(".loc__input").val(
       $(locationItemEl).find(".search-loc__popup-title").text()
     );
@@ -127,6 +123,7 @@ function locationSearch() {
     $(".search-loc").toggleClass("hidden");
   });
 
+  //click outside the location search form hidden the popup
   $(document).on("click", function (e) {
     if (!$(e.target).closest(".search-form__group--1").length) {
       if (!$(".search-loc").hasClass("hidden")) {
@@ -136,4 +133,37 @@ function locationSearch() {
   });
 }
 
-export { heroSearch, locationSearch };
+function checkInOut() {
+  const currentDate = moment();
+  // $("#date-range").on("click", function () {
+  //   const daterangepicker = $(".daterangepicker")[0];
+  //   var currentTop = parseFloat(daterangepicker.style.top); // Get the current top value as a numeric value
+  //   var updatedTop = currentTop + 20; // Add 10 pixels to the current top value
+  //   daterangepicker.style.top = updatedTop + "px";
+  //   console.log(daterangepicker.style.top);
+  // });
+  $("#date-range").daterangepicker({
+    locale: {
+      format: "DD/MM/YYYY",
+    },
+    startDate: currentDate,
+    minDate: currentDate,
+    opens: "center",
+    autoApply: true,
+  });
+
+  $("#date-range").on("show.daterangepicker", function () {
+    console.log("worked!");
+    const daterangepicker = $(".daterangepicker")[0];
+    var currentTop = parseFloat(daterangepicker.style.top); // Get the current top value as a numeric value
+    var updatedTop = currentTop + 20; // Add 10 pixels to the current top value
+    daterangepicker.style.top = updatedTop + "px";
+    console.log(daterangepicker.style.top);
+    // $(".daterangepicker").addClass("custom-class");
+    // $(".daterangepicker .ranges li").addClass("custom-class");
+    // $(".daterangepicker .applyBtn").addClass("custom-class");
+    // $(".daterangepicker .cancelBtn").addClass("custom-class");
+  });
+}
+
+export { heroSearch, locationSearch, checkInOut };
